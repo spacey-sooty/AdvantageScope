@@ -83,6 +83,12 @@ import {
 import { getOwletDownloadStatus, startOwletDownloadLoop } from "./owletDownloadLoop";
 import { checkHootIsPro, convertHoot, CTRE_LICENSE_URL } from "./owletInterface";
 
+if (DISTRIBUTOR === Distributor.FRC6328) {
+  app.setName("AdvantageScope");
+} else {
+  app.setName("AdvantageScope (WPILib)");
+}
+
 // Global variables
 let hubWindows: BrowserWindow[] = []; // Ordered by last focus time (recent first)
 let downloadWindow: BrowserWindow | null = null;
